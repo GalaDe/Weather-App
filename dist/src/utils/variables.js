@@ -11,7 +11,7 @@ exports.vars = {
     currentWeatherUrl(zipCode) {
         let url = config_json_1.default.currentWeatherByZipCode;
         url = url.replace('{zipCode}', zipCode);
-        url = url.replace('{apiKey}', config_json_1.default.apiKey);
+        url = url.replace('{apiKey}', `${process.env.WEATHER_API_KEY}`);
         return url;
     }
 };

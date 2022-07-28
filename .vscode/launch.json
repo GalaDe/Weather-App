@@ -19,6 +19,7 @@
             ],
             "env": {
                 "NODE_ENV": "development",
+                "WEATHER_API_KEY":"YOUR API KEY"
             }
         }
     ]

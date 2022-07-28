@@ -1,4 +1,3 @@
 {
-    "apiKey": "YOUR API KEY",
     "currentWeatherByZipCode": "https://api.openweathermap.org/data/2.5/weather?zip={zipCode}&appid={apiKey}&&units=imperial"
 }
