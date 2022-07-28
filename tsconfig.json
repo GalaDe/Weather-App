@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es2016",               
+    "module": "commonjs",                            
+    "esModuleInterop": true,                         
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                    
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "resolveJsonModule": true                   
+  },
+  "include": ["src/**/*.json", "src/**/*.ts", "src/*.ts", "_tests_/**/*.ts"],
+  "exclude": ["node_modules"],
+  "lib": ["es2015"]
+}

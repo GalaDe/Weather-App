@@ -1,0 +1,204 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"HealthStatus": {
+				"properties": {
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ForecastData": {
+				"properties": {
+					"currentTemp": {
+						"type": "number",
+						"format": "double"
+					},
+					"tempHigh": {
+						"type": "number",
+						"format": "double"
+					},
+					"tempLow": {
+						"type": "number",
+						"format": "double"
+					},
+					"currentWeather": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"currentTemp",
+					"tempHigh",
+					"tempLow",
+					"currentWeather"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Location": {
+				"properties": {
+					"cityName": {
+						"type": "string"
+					},
+					"country": {
+						"type": "string"
+					},
+					"zipCode": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"cityName",
+					"country",
+					"zipCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ErrorResponse": {
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"status": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"code",
+					"description",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "WeatherApp",
+		"version": "1.0.0",
+		"description": "App to check the weather using zip code",
+		"contact": {
+			"name": "Galaina Klikh"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/health": {
+			"get": {
+				"operationId": "Health",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/HealthStatus"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/api/currentWeather/{zipCode}": {
+			"get": {
+				"operationId": "GetCurrentWeatherByZipCode",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{
+											"properties": {
+												"location": {
+													"$ref": "#/components/schemas/Location"
+												},
+												"weather": {
+													"$ref": "#/components/schemas/ForecastData"
+												}
+											},
+											"required": [
+												"location",
+												"weather"
+											],
+											"type": "object"
+										},
+										{
+											"$ref": "#/components/schemas/ErrorResponse"
+										}
+									]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorResponse"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "zipCode",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

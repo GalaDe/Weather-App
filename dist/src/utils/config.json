@@ -1,0 +1,4 @@
+{
+    "apiKey": "e3264d62c719ed82d502e17bdde3c2de",
+    "currentWeatherByZipCode": "https://api.openweathermap.org/data/2.5/weather?zip={zipCode}&appid={apiKey}&&units=imperial"
+}
