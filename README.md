@@ -4,9 +4,10 @@ Current weather forecast using zip code
 
 ## Getting Started
 
+1. Create an account on [OpenWeatherMap](https://openweathermap.org/)
 First you need an API key from OpenWeatherMap, you can get one by creating an account on their website. After you got your API key, add it to src/utils/config.json file.
 
-apiKey='YOUR API KEY'
+"WEATHER_API_KEY":"YOUR API KEY"
 
 Finally clone this repository, install dependencies and run the local server.
 
