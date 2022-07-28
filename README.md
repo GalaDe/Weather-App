@@ -1,16 +1,16 @@
 # Weather-App
 
-Current weather forecast using zip code
+REST API to check the current weather forecast using zip code.
 
-## Getting Started
+## Tech Stack
 
-1. Create an account on [OpenWeatherMap](https://openweathermap.org/)
-First you need an API key from OpenWeatherMap, you can get one by creating an account on their website. After you got your API key, add it to src/utils/config.json file.
+TypeScript, TSOA Routes, Swagger
 
-"WEATHER_API_KEY":"YOUR API KEY"
+## How to run locally
 
-Finally clone this repository, install dependencies and run the local server.
+1. Clone this repository, install dependencies and run the local server.
 
+    
 ```
   git clone
   cd weatherapp
@@ -18,6 +18,12 @@ Finally clone this repository, install dependencies and run the local server.
   npm run build
   npm start
 ```
+
+2. Update API Key by creating an account on [OpenWeatherMap](https://openweathermap.org/)
+3. Copy API Key from the [OpenWeatherMap](https://openweathermap.org/) website or your email, navigate to .vscode/launch.json, paste API Key into env
+    
+   Example: "WEATHER_API_KEY":"YOUR API KEY"
+
 
 ## How to test
 
