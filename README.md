@@ -13,8 +13,10 @@ apiKey='YOUR API KEY'
 
 Finally clone this repository, install dependencies and run the local server.
 
-git clone
-cd weatherapp
-npm install
-npm run build
-npm start
+```
+  git clone
+  cd weatherapp
+  npm install
+  npm run build
+  npm start
+```
