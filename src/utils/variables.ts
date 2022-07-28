@@ -7,7 +7,7 @@ export const vars = {
   currentWeatherUrl(zipCode: string): string {
     let url = config.currentWeatherByZipCode;
     url = url.replace('{zipCode}', zipCode);
-    url = url.replace('{apiKey}', config.apiKey);
+    url = url.replace('{apiKey}', `${process.env.WEATHER_API_KEY}`);
     return url;
   }
 }
